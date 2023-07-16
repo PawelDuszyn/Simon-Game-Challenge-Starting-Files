@@ -15,6 +15,17 @@ $(document).keypress(function(){
     };
 })
 
+$("body").click(function(){
+    if (started === false) {
+        $("#level-title").text("Level " + level);
+        nextSequence();
+        started = true;
+    }
+    else{
+    
+    };
+})
+
 function checkAnswer(currentLevel) {
     if (gamePattern[userClickedPattern.length-1]===userClickedPattern[userClickedPattern.length-1])  {
     console.log("Success");
@@ -35,7 +46,9 @@ function checkAnswer(currentLevel) {
         $("body").removeClass("game-over");
         }, 200);
         $("#level-title").text("Game Over, Press Any Key to Restart")
+        setTimeout(() => {
         startOver();
+        }, 300);
     }  
     
 }
